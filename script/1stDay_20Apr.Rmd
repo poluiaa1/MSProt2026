@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 ## Resources
-Bioconductor packages tagged by "proteomics", n=188 on 8th Apr2026:
+Bioconductor packages tagged by "proteomics", n = 177 on Nov2024, n = 188 on 8th Apr2026:
 https://bioconductor.org/packages/release/BiocViews.html#___Proteomics
 
 ```{r setup, include=TRUE, echo=TRUE, eval=FALSE, message=FALSE}
@@ -41,6 +41,36 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Review some points about MS data
+### Dynamic range of signals
+
+**Dynamic range** describes the span between the smallest and largest signal a system can detect or measure reliably.  
+It is usually expressed in **orders of magnitude (powers of 10)**.
+
+>For example:
+- A dynamic range of $10^{6}$ means the largest signal is **1,000,000× bigger** than the smallest detectable one.
+- In biology, dynamic range is critical because molecules can exist at **vastly different concentrations in the same sample**.
+
+![Mount Damavand](fig_script/damavand.jpeg){fig-align="center" width=75%}
+![Fruit fly](fig_script/drosoph1c.jpg){fig-align="center" width=25%}
+
+
+- Mount Damavand: $\sim 5.6 \times 10^{3}$ m  
+- Fruit fly: $\sim 3 \times 10^{-3}$ m  
+- Ratio: $\sim 10^{6}$ (6 orders of magnitude)
+
+---
+
+### Detection technologies
+
+| System / Technology | Dynamic range (orders) | Molecular coverage | Physical scale (meters / concentration) | Damavand analogy |
+|--------------------|------------------------|--------------------|------------------------------------------|------------------|
+| Human eye (adapted) | $\sim 10^{9}$–$10^{12}$ | Macroscopic scene | Brightness: $\sim 10^{-6}$ to $10^{4}$ cd/m² | From sunlight to starlight (time-adapted) |
+| Mass spectrometry | $\sim 10^{4}$–$10^{6}$ | $\sim 10^{3}$–$10^{5}$ proteins | $\sim 10^{-12}$ to $10^{-6}$ M (pM–µM) | Damavand ($5.6 \times 10^{3}$ m) → fruit fly ($3 \times 10^{-3}$ m) |
+| General chemical assays (UV, fluorescence, NMR) | $\sim 10^{3}$–$10^{5}$ | 1–10 analytes | $\sim 10^{-6}$ to $10^{-3}$ M (µM–mM) | Damavand → building scale |
+| Biological proteome (human plasma) | $\sim 10^{10}$–$10^{12}$ | $\sim 10^{4}$–$10^{5}$ proteins | $\sim 10^{-3}$ to $10^{-15}$ M (mM–fM) | Damavand → sub-viral / molecular scale |
+
+### Signal representation in MS
+
 - The continuous workflow of separating-separating-separating!
 
 - Three dimensions: Retention time of analyser elution - Mass to charge (M/Z) - Intensity
