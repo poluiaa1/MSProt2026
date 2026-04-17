@@ -455,7 +455,22 @@ Examples:
 
 ```{r, eval=FALSE}
 #library(PSMatch)
-calculateFragments("THSQEEMQHMQR")
+calculateFragments("TAFDEAIAELDTLNEESYK")
+calculateFragments("TAFDEAIAELDTLNEESYK", type=c("a", "b", "c", "x", "y", "z"),
+                   z=1:2)
+```
+```{r}
+library("protViz")
+data(msms)
+
+fi <- fragmentIon("TAFDEAIAELDTLNEESYK")
+fi.cyz <- as.data.frame(cbind(c=fi[[1]]$c, y=fi[[1]]$y, z=fi[[1]]$z))
+
+p <- peakplot("TAFDEAIAELDTLNEESYK",
+              spec = msms[[1]],
+              fi = fi.cyz,
+              itol = 0.6,
+              ion.axes = FALSE)
 ```
 
 ### Quiz 3 (GA_6)
@@ -527,9 +542,9 @@ ggplot(df, aes(score, color = type, fill = type)) +
 ```
 In summary, two key assumptions must be satisfied:
 
-Assumption 1: Decoy PSMs provide an accurate model of incorrect target matches, meaning the score distributions of decoy hits and false target hits are equivalent.
+*Assumption 1*: Decoy PSMs provide an accurate model of incorrect target matches, meaning the score distributions of decoy hits and false target hits are equivalent.
 
-Assumption 2: When target and decoy databases are of equal size, any incorrect (random) match is equally likely to be assigned to a target or a decoy sequence.
+*Assumption 2*: When target and decoy databases are of equal size, any incorrect (random) match is equally likely to be assigned to a target or a decoy sequence.
 
 
 ## Enzyme digestion

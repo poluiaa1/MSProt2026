@@ -69,6 +69,8 @@ It is usually expressed in **orders of magnitude (powers of 10)**.
 | General chemical assays (UV, fluorescence, NMR) | $\sim 10^{3}$–$10^{5}$ | 1–10 analytes | $\sim 10^{-6}$ to $10^{-3}$ M (µM–mM) | Damavand → building scale |
 | Biological proteome (human plasma) | $\sim 10^{10}$–$10^{12}$ | $\sim 10^{4}$–$10^{5}$ proteins | $\sim 10^{-3}$ to $10^{-15}$ M (mM–fM) | Damavand → sub-viral / molecular scale |
 
+![](fig_script/Coverage.png){fig-align="center" width=100%}
+
 ### Signal representation in MS
 
 - The continuous workflow of separating-separating-separating!
@@ -144,7 +146,10 @@ https://en.wikipedia.org/wiki/Mass_spectrometry_data_format
 
 ## MS data from R prospective
 
-![Three dimensions](fig_script/F02-3D-MS1-MS2-scans-100-1200-lattice.png){fig-align="center" width=70%}
+>What is the difference between DDA and DIA from a data acquisition perspective?
+
+![Three dimensions in DDA](fig_script/DDA_example1.png){fig-align="left" width=50%}![Three dimensions in DDA](fig_script/DDA_example2.png){fig-align="rigth" width=50%}
+![Three dimensions in DIA](fig_script/DIA_example.png){fig-align="center" width=50%}
 
 
 ![How it looks in R](fig_script/raw.png){fig-align="center"}
